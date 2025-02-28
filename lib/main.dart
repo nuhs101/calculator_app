@@ -18,3 +18,24 @@ class _CalculatorAppState extends State<CalculatorApp> {
   double num1 = 0;
   double num2 = 0;
 }
+
+void buttonPressed(String value) {}
+
+Widget buildButton(String text) {
+  return Expanded(
+    child: Padding(
+      padding: const EdgeInsets.all(5),
+      child: ElevatedButton(
+        onPressed: () => buttonPressed(text),
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.all(20),
+          backgroundColor: Colors.blueGrey,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        child: Text(text, style: TextStyle(fontSize: 24, color: Colors.white)),
+      ),
+    ),
+  );
+}
