@@ -79,4 +79,67 @@ class _CalculatorAppState extends State<CalculatorApp> {
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: Text("Calculator"),
+          backgroundColor: Colors.blueGrey,
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                alignment: Alignment.bottomRight,
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  input.isNotEmpty ? input : result,
+                  style: TextStyle(fontSize: 48, color: Colors.white),
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    buildButton("7"),
+                    buildButton("8"),
+                    buildButton("9"),
+                    buildButton("/"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("4"),
+                    buildButton("5"),
+                    buildButton("6"),
+                    buildButton("*"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("1"),
+                    buildButton("2"),
+                    buildButton("3"),
+                    buildButton("-"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("0"),
+                    buildButton("C"),
+                    buildButton("+"),
+                    buildButton("="),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
